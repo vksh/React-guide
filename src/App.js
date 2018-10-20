@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import Persons from '../src/components/persons/persons.component';
 class App extends Component {
+  persons = [
+    {
+      name: 'Vikash',
+      age: '22',
+      role: 'Developer'
+    },
+    {
+      name: 'Lionel',
+      age: '32',
+      role: 'Footballer'
+    },
+    {
+      name: 'Tim Cook',
+      age: '42',
+      role: 'CEO'
+    },
+    {
+      name: 'Ronaldo',
+      age: '33',
+      role: 'Footballer'
+    }
+  ]
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Persons persons={this.persons}></Persons>
       </div>
     );
   }
