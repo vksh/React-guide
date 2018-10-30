@@ -17,6 +17,8 @@ const buildControls = (props) => (
                 update={(param) => props.updateIngredient(param, control.type)}
                 disabledInfo={props.disabledInfo[control.type]}></BuildControl>
         ))}
+        <button disabled={!props.purchasable}
+            onClick={props.ordered} className='btn btn-primary btn-lg mt-3'>Order Now</button>
     </div>
 )
 
