@@ -1,14 +1,16 @@
 import React from 'react';
 import './Toolbar.scss';
 import Logo from '../../../shared/Logo/Logo';
+import NavigationItems from '../NavigationItems/NavigationItems';
 import BurgerLogo from '../../../assets/images/burger-logo.png';
-const toolbar = () => (
+const toolbar = (props) => (
     <header className='toolbar'>
         <Logo logoUrl={BurgerLogo}
             logoClass='applogo'></Logo>
-        <div>Menu</div>
+        <div className='menu-icon'><i className="material-icons"
+            onClick={props.menuclicked}>{props.showCross ? 'close': 'menu'}</i></div>
         <nav>
-            Navigation
+            <NavigationItems></NavigationItems>
         </nav>
     </header>
 );

@@ -15,4 +15,20 @@
         height: 100%;
         width: 100%;
     }
+    .menu-icon {
+        display: none;
+        cursor: pointer;
+        color: white;
+    }
+}
+
+@media (max-width:500px) {
+    .toolbar {
+        nav {
+            display: none
+        }
+        .menu-icon {
+            display: block;
+        }
+    }
 }

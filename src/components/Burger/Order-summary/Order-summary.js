@@ -3,8 +3,8 @@ import Aux from '../../../hoc/Auxi';
 import './Order-summary.scss';
 const orderSummary = (props) => {
     const ingredientSummary = Object.keys(props.ingredients)
-        .map(ingredient => {
-            return (<li><span>{ingredient.toUpperCase()}</span>: {props.ingredients[ingredient]}</li>)
+        .map((ingredient, index) => {
+            return (<li key={index}><span>{ingredient.toUpperCase()}</span>: {props.ingredients[ingredient]}</li>)
         })
     return (
         <Aux>

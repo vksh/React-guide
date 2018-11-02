@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Modal.scss';
 import Aux from '../../hoc/Auxi';
 import Backdrop from '../../shared/Backdrop/Backdrop';
-const modal = (props) => (
-    <Aux>
-        <Backdrop show={props.show}
-            click={props.modalClose}></Backdrop>
-        <div className={'custom-modal' + (props.show ? ' showModal' : '')}>
-            {props.children}
-        </div>
-    </Aux>
-)
+class Modal extends Component {
+    shouldComponentUpdate(nextProps) {
+        return nextProps.show !== this.props.show;
+    }
+    render() {
+        return (
+            <Aux>
+                <Backdrop show={this.props.show}
+                    click={this.props.modalClose}></Backdrop>
+                <div className={'custom-modal' + (this.props.show ? ' showModal' : '')}>
+                    {this.props.children}
+                </div>
+            </Aux>
+        )
+    }
+}
 
-export default modal;
+export default Modal;
