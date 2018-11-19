@@ -3,8 +3,8 @@ import './NavigationItems.scss';
 import NavigationItem from '../NavigationItem/NavigationItem';
 const navigationItems = (props) => (
     <ul className='navigationItems'>
-        <NavigationItem link='/' active>Burger Builder</NavigationItem>
-        <NavigationItem link='/'>Checkout</NavigationItem>
+        <NavigationItem link='/' >Burger Builder</NavigationItem>
+        <NavigationItem link='/checkout'>Checkout</NavigationItem>
     </ul>
 );
 
